@@ -1,30 +1,57 @@
 import React, {useEffect, useState} from "react";
+import {connect} from "react-redux";
 import WeatherIcon from "../weather-icon/WeatherIcon";
 import './MainPage.css';
+import {currentWeatherFetch} from "../../actions/Actions";
 
-const MainPage = () => {
+const MainPage = (props) => {
     const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+    const { loadCurrentWeather, data, isLoading, error } = props;
 
     const [ currentWeather, changeCurrentWeather ] = useState ([]);
 
-    const getJson =  () => {
-        try {
-             fetch (`https://api.openweathermap.org/data/2.5/weather?q=Lviv&appid=${apiKey}`)
-                .then (data => data.json ())
-                .then (data => changeCurrentWeather(data))
-                .catch (e => console.log (e));
-        } catch (e) {
-            console.log (e);
-        }
-    };
+    // const getJson =  () => {
+    //     try {
+    //          fetch (`https://api.openweathermap.org/data/2.5/weather?q=Lviv&appid=${apiKey}`)
+    //             .then (data => data.json ())
+    //             .then (data => changeCurrentWeather(data))
+    //             .catch (e => console.log (e));
+    //     } catch (e) {
+    //         console.log (e);
+    //     }
+    // };
     useEffect (() => {
-        getJson ();
+        loadCurrentWeather (`https://api.openweathermap.org/data/2.5/weather?q=Lviv&appid=${apiKey}`)
     }, []);
 
+        console.log (data);
     return (
         <div className='container-of-main'>
-            <WeatherIcon currentWeathere={currentWeather}/>
-        </div>
-    )
+            {
+                !error ?
+                    !isLoading ?
+                        <WeatherIcon currentWeather={data}/>
+                        : <div>loading:)</div>
+                    : error.toString()
+            }
+        </div>)
 };
-export default MainPage;
+
+const mapStateToProps = (state) => {
+    console.log (state)
+    const { data, isLoading, error } = state;
+    // console.log (data, isLoading, error)
+    return {
+        data,
+        isLoading,
+        error
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        loadCurrentWeather: (url) => dispatch (currentWeatherFetch (url))
+    }
+};
+
+export default connect (mapStateToProps, mapDispatchToProps) (MainPage);

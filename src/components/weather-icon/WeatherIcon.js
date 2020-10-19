@@ -2,14 +2,21 @@ import React, {useEffect, useState} from "react";
 import './WeatherIcon.css'
 
 const WeatherIcon = (props) => {
-    const {currentWeathere} = props;
+    const {currentWeather} = props;
     const [weatherFromProps, changeWeather] = useState({});
+    const nameOfWeather = weatherFromProps.weather;
+    const currentTemperature = weatherFromProps.main;
 
     useEffect(() => {
-        changeWeather(currentWeathere);
-    },[currentWeathere]);
+        changeWeather(currentWeather);
+    },[currentWeather]);
 
-    const nameOfWeather = weatherFromProps.weather;
+    const getCelsuis = (kelvin) => {
+        kelvin = parseInt(kelvin);
+        let celsius = kelvin - 273.15;
+        return celsius.toFixed(1);
+    };
+
     return(
     <div className='container container-main'>
         <div className='name-of-weather'>
@@ -19,7 +26,7 @@ const WeatherIcon = (props) => {
                 : 'nul'}
         </div>
         <div className='container-of-temperature'>
-            <p>temperature: {weatherFromProps ? 'yes' : 'no'}</p>
+            <p>temperature: {currentTemperature ? getCelsuis(currentTemperature.temp) : 'no'}</p>
         </div>
         <div className='footer'>
 

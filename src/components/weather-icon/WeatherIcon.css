@@ -2,4 +2,14 @@
   border: 1px solid black;
   width: 30vw;
   height: 30vh;
+  border-radius: 15px;
+  background-color: cornflowerblue;
+}
+.name-of-weather {
+  margin: 20px 35px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 25px;
+}
+.footer {
+  height: 100%;
 }
