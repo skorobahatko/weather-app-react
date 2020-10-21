@@ -20,20 +20,26 @@ const MainPage = (props) => {
     //         console.log (e);
     //     }
     // };
-    useEffect (() => {
-        loadCurrentWeather (`https://api.openweathermap.org/data/2.5/weather?q=Lviv&appid=${apiKey}`)
+    // useEffect (() => {
+    //     loadCurrentWeather (`https://api.openweathermap.org/data/2.5/weather?q=Lviv&appid=${apiKey}`)
+    // }, []);
+    // console.log (navigator.geolocation);
+    //     console.log (props);
+    useEffect(() => {
+        fetch('http://localhost:9000/newroute')
+            .then(response => response.text())
+            .then(response => changeCurrentWeather(response));
     }, []);
-    console.log (navigator.geolocation);
-        console.log (props);
     return (
         <div className='container-of-main'>
-            {
-                !error ?
-                    !isLoading ?
-                        <WeatherIcon currentWeather={data}/>
-                        : <div>loading:)</div>
-                    : error.toString()
-            }
+            {currentWeather}
+            {/*{*/}
+            {/*    !error ?*/}
+            {/*        !isLoading ?*/}
+            {/*            <WeatherIcon currentWeather={data}/>*/}
+            {/*            : <div>loading:)</div>*/}
+            {/*        : error.toString()*/}
+            {/*}*/}
         </div>)
 };
 
