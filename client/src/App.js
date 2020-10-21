@@ -13,8 +13,11 @@ function App() {
         <Provider store={store}>
             <Router>
                 <Switch>
-                    <Route path='/'>
-                        <MainPage/>
+                    <Route path='/' render={(routerProps) => {
+                        return(
+                            <MainPage {...routerProps}/>
+                        )
+                    }}>
                     </Route>
                 </Switch>
             </Router>

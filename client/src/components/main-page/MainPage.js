@@ -6,7 +6,7 @@ import {currentWeatherFetch} from "../../actions/Actions";
 
 const MainPage = (props) => {
     const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
-    const { loadCurrentWeather, data, isLoading, error } = props;
+    const { loadCurrentWeather, data, isLoading, error, location } = props;
 
     const [ currentWeather, changeCurrentWeather ] = useState ([]);
 
@@ -23,8 +23,8 @@ const MainPage = (props) => {
     useEffect (() => {
         loadCurrentWeather (`https://api.openweathermap.org/data/2.5/weather?q=Lviv&appid=${apiKey}`)
     }, []);
-
-        console.log (data);
+    console.log (navigator.geolocation);
+        console.log (props);
     return (
         <div className='container-of-main'>
             {
