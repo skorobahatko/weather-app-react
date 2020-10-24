@@ -2,9 +2,11 @@ const weatherService = require('../services/weather-service');
 
 module.exports = {
     getCurrentWeather: async (req, res) => {
+        console.log ('controller');
         try {
-            const getFromAPI = await weatherService.getCurrentWeatherService ();
-            res.send (getFromAPI);
+            let body = req.params.city;
+            const getFromAPI = await weatherService.getCurrentWeatherService (body);
+            res.json (getFromAPI);
         } catch (e) {
             console.log (e)
         }

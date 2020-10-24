@@ -5,26 +5,31 @@ import './MainPage.css';
 import {currentWeatherFetch} from "../../actions/Actions";
 
 const MainPage = (props) => {
-    const { loadCurrentWeather, data, isLoading, error, location } = props;
+    const { loadCurrentWeather, data, isLoading, error, location, params } = props;
 
-    const [ currentWeather, changeCurrentWeather ] = useState ([]);
-
-    // console.log (navigator.geolocation);
-    //     console.log (props);
+    const isSearchSame = (oldData, newData) => {
+        let oldNameOfCity = oldData.name.toLowerCase();
+        newData = newData.toLowerCase();
+        if (oldNameOfCity === newData) {
+            return false
+        } else {
+            return true
+        }
+    };
 
     useEffect(() => {
-        fetch('http://localhost:9000/weather')
-            .then(response => response.json())
-            .then(response => changeCurrentWeather(response));
+        const city = props.match.params.city;
+        if (city) {
+            loadCurrentWeather (city);
+        }
     }, []);
 
     return (
         <div className='container-of-main'>
-            {/*{currentWeather}*/}
             {
                 !error ?
                     !isLoading ?
-                        <WeatherIcon currentWeather={currentWeather}/>
+                        <WeatherIcon currentWeather={data}/>
                         : <div>loading:)</div>
                     : error.toString()
             }
@@ -32,9 +37,7 @@ const MainPage = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log (state)
     const { data, isLoading, error } = state;
-    // console.log (data, isLoading, error)
     return {
         data,
         isLoading,
@@ -44,7 +47,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        loadCurrentWeather: (url) => dispatch (currentWeatherFetch (url))
+        loadCurrentWeather: (city) => dispatch (currentWeatherFetch (city))
     }
 };
 

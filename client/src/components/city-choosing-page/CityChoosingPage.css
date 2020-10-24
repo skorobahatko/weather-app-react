@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Trispace:wght@500&display=swap');
+
+
+.background {
+    height: 100vh;
+    background: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+    font-family: "Trispace", sans-serif;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.input-of-submit {
+    width: 30%;
+    margin: 15px 35% 0;
+    border: 0;
+    height: 25px;
+    border-radius: 20px;
+    font-size: 19px;
+    font-family: 'Trispace', sans-serif;
+    background: grey;
+}
+.input-of-submit:active {
+    outline: 0;
+}
+.input-of-city {
+    background: inherit;
+    outline: 0;
+    width: 30vw;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Trispace', sans-serif;
+    border: 0;
+    border-bottom: 2px solid gray;
+}
+.input-of-city:focus {
+    border: 0;
+    border-bottom: 2px solid #595959;
+}

@@ -6,8 +6,7 @@ export function currentWeatherReducer (state = defaultStoreData.currentWeather, 
     switch (action.type) {
         case CURRENT_WEATHER_DATA : {
             newState.data = action.payload;
-            console.log ('data')
-            console.log (action.payload);
+
             return newState;
         }
         case IS_CURRENT_WEATHER_LOADING: {
