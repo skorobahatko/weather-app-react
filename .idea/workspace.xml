@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="91688e49-eccd-45c7-b450-8b85fb0ba78a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/weather-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/weather-controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/weather-routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/weather-routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/services/weather-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/services/weather-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/Actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/Actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/city-choosing-page/CityChoosingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/city-choosing-page/CityChoosingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/main-page/MainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/main-page/MainPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/main-page/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/main-page/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/CurrentWeatherReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/CurrentWeatherReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/weather-icon/WeatherIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/weather-icon/WeatherIcon.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,9 @@
       <updated>1603276421336</updated>
       <workItem from="1603276422797" duration="13010000" />
       <workItem from="1603444564462" duration="1548000" />
-      <workItem from="1603559061032" duration="5776000" />
+      <workItem from="1603559061032" duration="5989000" />
+      <workItem from="1603632130050" duration="3587000" />
+      <workItem from="1603883231432" duration="1550000" />
     </task>
     <servers />
   </component>

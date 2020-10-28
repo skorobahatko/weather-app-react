@@ -27,7 +27,8 @@ const CityChoosingPage = (props) => {
         }
     };
 
-    return (<div className='container-fluid background'>
+    return (
+        <div className='container-fluid background'>
             <h1>Where are u?</h1>
             <div>
                 <form onSubmit={FormSubmit} className='form-group' autoComplete='off'>

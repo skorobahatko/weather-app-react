@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    BrowserRouter as Router, Switch, Route, Link
+    BrowserRouter as Router, Switch, Route, Link, Redirect
 } from 'react-router-dom';
 import {Provider} from 'react-redux';
 import MainPage from "./components/main-page/MainPage";
@@ -17,6 +17,7 @@ function App() {
                     {/*<Route path='/'>*/}
                     {/*    <CityChoosingPage/>*/}
                     {/*</Route>*/}
+                    <Redirect from='/' to='/weather/choose_city' exact/>
                     <Route path='/weather/choose_city' render={(routerProps) => {
                         return(
                             <CityChoosingPage {...routerProps}/>

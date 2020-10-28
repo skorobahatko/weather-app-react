@@ -11,12 +11,11 @@ const WeatherIcon = (props) => {
         changeWeather(currentWeather);
     },[currentWeather]);
 
-    const getCelsuis = (kelvin) => {
-        kelvin = parseInt(kelvin);
-        let celsius = kelvin - 273.15;
-        return celsius.toFixed(1);
-    };
-
+    // const getCelsuis = (kelvin) => {
+    //     kelvin = parseInt(kelvin);
+    //     let celsius = kelvin - 273.15;
+    //     return celsius.toFixed(1);
+    // };
     return(
     <div className='container container-main'>
         <div className='name-of-weather'>
@@ -26,7 +25,7 @@ const WeatherIcon = (props) => {
                 : 'nul'}
         </div>
         <div className='container-of-temperature'>
-            <p>temperature: {currentTemperature ? getCelsuis(currentTemperature.temp) : 'no'}</p>
+            <p>temperature: {currentTemperature ? currentTemperature.temp : 'no'}</p>
         </div>
         <div className='footer'>
 

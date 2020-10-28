@@ -25,12 +25,12 @@ const MainPage = (props) => {
     }, []);
 
     return (
-        <div className='container-of-main'>
+        <div className={`container-of-main ${isLoading ? 'loading-background' : null}`}>
             {
                 !error ?
                     !isLoading ?
                         <WeatherIcon currentWeather={data}/>
-                        : <div>loading:)</div>
+                        : <div className='loading-notification'>loading:)</div>
                     : error.toString()
             }
         </div>)
